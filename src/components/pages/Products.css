@@ -1,0 +1,16 @@
+.bg-img{
+    background-image: url('../../assets/countdownbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+.circle-size{
+    width: 90px;
+    height: 90px;
+}
+
+.prodctgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
