@@ -1,10 +1,27 @@
-import { Link } from 'react-router-dom';
+import { Link ,useLocation,useNavigate} from 'react-router-dom';
 import logo from '../../assets/logo.svg'
 import "./Navber.css"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const Navbar = () => {
     const [menu,setmenu] = useState("Home")
+    const [logintext, setlogintext] = useState(false)
+    const Location = useLocation()
+    
+    useEffect(() => {
+    const token = localStorage.getItem("token");
+    
+      setlogintext(!!token);
+    
+  }, [Location]);
+
+const navigate = useNavigate();
+
+function log() {
+
+        localStorage.removeItem('token');
+  navigate('/login');
+}
     return (
         <>
             <div className="w-75 m-auto d-flex justify-content-between align-items-center mt-3 text-secondary">
@@ -22,7 +39,7 @@ export const Navbar = () => {
                         <option value="2">BRL</option>
                     </select>
 
-                    <Link className='px-3 ms-2 border-start border-secondary text-decoration-none text-secondary' to="Login">Sign In / Sign Up</Link>
+                    <Link className='px-3 ms-2 border-start border-secondary text-decoration-none text-secondary' onClick={log} to="/login" >{logintext?"Logout": "Sign In / Sign Up"}</Link>
 
 
                 </div>

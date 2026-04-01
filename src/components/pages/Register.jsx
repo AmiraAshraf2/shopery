@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import axios from "axios";
 
 export const Register = () => {
     const {
@@ -12,8 +13,13 @@ export const Register = () => {
 
     async function onSubmit(data) {
         try {
+            console.log(data);
             const response = await axios.post("http://localhost:8000/api/register", data)
-            localStorage.setItem('token', response.data.data.accessToken)
+            console.log(response);
+            
+            
+            
+            localStorage.setItem('token', response.data.token)
             navigate("/products")
         }
         catch (err) {
