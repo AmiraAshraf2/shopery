@@ -87,16 +87,23 @@ export const Navbar = () => {
                                         Pages
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Home")}} to=''>Home</Link></li>
-                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='products'>Shop</Link></li>
-                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Profile")}} to='profile'>profile</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Fresh Fruit'>Fresh Fruit</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Fresh Vegetables'>Fresh Vegetables</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Meat Fish'>Meat & Fish</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Snacks'>Snacks</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Beverages'>Beverages</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Beauty Health'>Beauty & Health</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Bread Bakery'>Bread & Bakery</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Baking Needs'>Baking Needs</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Cooking'>Cooking</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Diabetic Food'>Diabetic Food</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Dish Detergents'>Dish Detergents</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='/Oil'>Oil</Link></li>
+
                                     </ul>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link text-secondary">About Us</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link text-secondary">Contact Us</Link>
+                                    <Link className={`nav-link ${menu === "Profile"? 'text-white': 'text-secondary'}`} onClick={()=>{setmenu("Profile")}} to='profile'>profile</Link>
                                 </li>
                             </ul>
                             <div className='d-flex align-items-center gap-2 text-white'>

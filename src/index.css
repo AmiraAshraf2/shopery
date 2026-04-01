@@ -5,3 +5,11 @@
 .f-input{
   width: 300px!important;
 }
+
+.hover-green-border:hover{
+  border-color: green;
+}
+
+.hover-green-text:hover{
+  color: green;
+}

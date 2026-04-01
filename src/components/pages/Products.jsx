@@ -80,13 +80,13 @@ export const Products = ({ Category }) => {
                 >
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item">
-                            <Link className='text-decoration-none text-secondary' to=""><i className="bi bi-house-door"></i></Link>
+                            <Link className='text-decoration-none text-secondary' to="/"><i className="bi bi-house-door"></i></Link>
                         </li>
                         <li className="breadcrumb-item">
                             <Link className='text-decoration-none text-secondary' to="">Categories</Link>
                         </li>
                         <li className="breadcrumb-item text-success active" aria-current="page">
-                            Vegetables
+                            {Category}
                         </li>
                     </ol>
                 </nav>

@@ -12,7 +12,7 @@ export const Register = () => {
 
     async function onSubmit(data) {
         try {
-            const response = await axios.post("https://erp.techsexperts.cloud/api/admins/register", data)
+            const response = await axios.post("http://localhost:8000/api/register", data)
             localStorage.setItem('token', response.data.data.accessToken)
             navigate("/products")
         }
@@ -26,6 +26,13 @@ export const Register = () => {
             <div className="d-flex justify-content-center align-items-center">
                 <form action="" className="px-3 d-flex flex-column my-5 border w-25 gap-2 rounded-2 shadow" onSubmit={handleSubmit(onSubmit)} >
                     <h2 className="text-center mt-3">Create Account</h2>
+                    <input type="text" id="inputname5" className={`form-control ${errors.name ? 'is-invalid' : ''}`} aria-describedby="passwordHelpBlock" placeholder="name" {...register("name", {
+                        required: "name is required",
+                        minLength: {
+                            value: 3,
+                            message: "name must be at least 6 characters"
+                        }
+                    })}></input>
                     <input type="email" className={`form-control ${errors.email ? 'is-invalid' : ''}`} id="exampleFormControlInput1" placeholder="Email" {...register("email", {
                         required: "Email is required",
                         pattern: {

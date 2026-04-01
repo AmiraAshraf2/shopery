@@ -4,7 +4,7 @@ export const CategorieCard = ({ img,text,Category}) => {
     return (
         <>
             <Link className="text-decoration-none" to={Category}>
-            <div className="card" >
+            <div className="card hover-green-border hover-green-text" >
                 <img src={img} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <p className="card-text text-center fw-bolder">{text}</p>

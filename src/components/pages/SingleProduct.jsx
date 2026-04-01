@@ -3,15 +3,20 @@ import products from "../../assets/data.js"
 import { Card } from '../card/Card.jsx';
 import "./SingleProduct.css"
 import brand from '../../assets/brand.svg'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 export const SingleProduct = () => {
     const { productId } = useParams();
     console.log(productId);
 
     const product = products.find(p => p.id === Number(productId));
-    console.log(product);
     const [quantity, setquantity] = useState(1);
     const [mainImg, setMainImg] = useState(product.mainImage);
+    useEffect(() => {
+        if (product) {
+            setMainImg(product.mainImage);
+            setquantity(1); 
+        }
+    }, [productId, product]);
     return (
         <>
             <div className="w-75 m-auto mt-4">
@@ -30,7 +35,7 @@ export const SingleProduct = () => {
                         <img className="mainimg" src={mainImg} alt="" />
 
                     </div>
-                    <div className="ms-4 w-50">
+                    <div className="ms-4 w-50 d-flex flex-column justify-content-between">
                         <h2>{product.name} <span className="fs-6 text-success bg-success-subtle p-1 px-2 rounded-2">In Stock</span></h2>
                         <span className="text-warning">
                             {[...Array(5)].map((_, i) => {
@@ -49,7 +54,7 @@ export const SingleProduct = () => {
                         </span>
                         <div className="mt-2">
                             {
-                                product.discount>0 ? <p > <span className="text-decoration-line-through text-secondary fs-4 fw-semibold">${product.price}</span> <span className="text-success fs-4 fw-semibold">${product.price-(product.price *(product.discount/100))}</span> <span className="text-danger bg-danger-subtle rounded-pill px-3 py-2 fw-semibold">{product.discount}% Off</span> </p>: <p className="text-success fs-4 fw-semibold">${product.price}</p>
+                                product.discount>0 ? <p > <span className="text-decoration-line-through text-secondary fs-4 fw-semibold">${product.price}</span> <span className="text-success fs-4 fw-semibold">${product.price-(product.price *(product.discount/100))}</span> <span className="text-danger bg-danger-subtle rounded-pill px-3 py-2 fw-semibold">{product.discount}% Off</span> </p>: <p className="fs-4 fw-semibold">${product.price}</p>
                             }
                         </div>
                         <hr />
@@ -88,9 +93,9 @@ export const SingleProduct = () => {
                 <div>
                     <h3 className="mb-4 text-center">Related Products</h3>
 
-                    <div className="prodctgrid">
+                    <div className="prodctgrid mb-5">
                     {
-                        products.filter(productdata => productdata.category === product.category).slice(0, 4).map((item) => {
+                        products.filter(productdata => (productdata.category === product.category && productdata !== product )).slice(0, 4).map((item) => {
                                                     return (
                         
                                                         <Card key={item.id} item={item} />

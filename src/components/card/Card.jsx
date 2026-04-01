@@ -2,7 +2,7 @@ import './Card.css'
 import { Link } from 'react-router-dom';
 export const Card = ({ item }) => {
   return (<>
-    <div className="card" >
+    <div className="card hover-green-border" >
       <div className='position-relative'>
         <img src={item.mainImage} className="card-img-top img" alt="" />
         <div className='position-absolute top-0 end-0 mt-4 me-3 hiden-min'>
@@ -22,7 +22,7 @@ export const Card = ({ item }) => {
       </div>
       <div className="card-body d-flex justify-content-between align-items-center">
         <div className="d-flex flex-column">
-          <span>{item.name}</span>
+          <span className='hover-green-text'>{item.name}</span>
           <span className="fs-5 fw-semibold">${item.price}</span>
           <span className="text-warning">
             {[...Array(5)].map((_, i) => {
