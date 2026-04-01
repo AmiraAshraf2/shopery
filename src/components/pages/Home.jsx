@@ -107,7 +107,6 @@ export const Home = () => {
                 <CategorieCard img={Oil} text={"Oil"} Category={"Oil"}/>
             </div>
 
-            <h3 className="mb-4">Popular Products</h3>
 
             
         </div>
