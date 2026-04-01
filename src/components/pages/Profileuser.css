@@ -1,0 +1,36 @@
+
+.active-nav {
+  background-color: #f0fdf0 !important;
+  color: #00b207 !important;
+  border-left: 4px solid #00b207 !important;
+}
+
+.btn-success {
+  background-color: #00b207;
+  border-color: #00b207;
+}
+
+.btn-success:hover {
+  background-color: #009606;
+  border-color: #009606;
+}
+
+.btn-outline-success {
+  color: #00b207;
+  border-color: #00b207;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #00b207;
+  box-shadow: 0 0 0 0.25rem rgba(0, 178, 7, 0.1);
+}
+
+.card {
+  border-radius: 8px;
+}
+
+.profile-img-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}

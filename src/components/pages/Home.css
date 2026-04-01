@@ -1,0 +1,42 @@
+.bannerf-bg-img{
+    background-image: url('../../assets/backgrounds/ladybg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+.banners-bg-img{
+    background-image: url(../../assets/backgrounds/vbagbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+.bannert-bg-img{
+    background-image: url(../../assets/backgrounds/leafs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+.w-h{
+    width: 35%;
+}
+.w-100{
+    width: 100%;
+    height: 50%;
+}
+.h-100{
+    height: 100%;
+}
+.py-banner{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.small-text{
+    font-size: 12px;
+}
+
+.grid-categorie{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}

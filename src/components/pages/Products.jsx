@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import './Products.css'
 import { useState, useEffect } from "react"
 import { Card } from '../card/Card';
+import data from '../../assets/data.js'
 import axios from "axios"
-export const Products = () => {
+export const Products = ({ Category }) => {
     const [daycount, setdaycount] = useState(0);
     const [hourcount, sethourcount] = useState(2);
     const [minutecount, setminutecount] = useState(18);
@@ -127,15 +128,13 @@ export const Products = () => {
 
                 <div className="prodctgrid mb-5">
                     {
-                        product.map((item) => {
-                            return (
-
-                                <Card key={item._id} item={item} />
-
-
-
-                            )
-                        })
+                        data
+                            .filter((item) => {
+                                return Category === "" || item.category === Category;
+                            })
+                            .map((item) => {
+                                return <Card key={item.id} item={item} />;
+                            })
                     }
 
                 </div>

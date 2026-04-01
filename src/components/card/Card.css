@@ -1,0 +1,15 @@
+.circle-btn{
+    width: 40px;
+    height: 40px;
+}
+.hiden-min{
+    display: none !important;
+}
+
+.card:hover .hiden-min{
+    display: block !important;
+}
+
+.img{
+    height: 190px;
+}

@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg'
 import "./Navber.css"
+import { useState } from 'react';
 
 export const Navbar = () => {
+    const [menu,setmenu] = useState("Home")
     return (
         <>
             <div className="w-75 m-auto d-flex justify-content-between align-items-center mt-3 text-secondary">
@@ -74,20 +76,20 @@ export const Navbar = () => {
                     <div className="container-fluid ">
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-                                <li className="nav-item">
-                                    <Link className="nav-link active text-white" aria-current="page" to="">Home</Link>
+                                <li className="nav-item" onClick={()=>{setmenu("Home")}}>
+                                    <Link className={`nav-link active ${menu === "Home"? 'text-white': 'text-secondary'}`} aria-current="page" to="">Home</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link text-secondary" to="products">Shop</Link>
+                                <li className="nav-item" onClick={()=>{setmenu("Shop")}}>
+                                    <Link className={`nav-link ${menu === "Shop"? 'text-white': 'text-secondary'}`} to="products">Shop</Link>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Pages
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">Home</a></li>
-                                        <li><a className="dropdown-item" href="#">Shop</a></li>
-                                        <li><a className="dropdown-item" href="#">profile</a></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Home")}} to=''>Home</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Shop")}} to='products'>Shop</Link></li>
+                                        <li><Link className="dropdown-item" onClick={()=>{setmenu("Profile")}} to='profile'>profile</Link></li>
                                     </ul>
                                 </li>
                                 <li className="nav-item">

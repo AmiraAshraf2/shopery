@@ -1,0 +1,28 @@
+.mainimg{
+    width: 500px;
+    height: 500px;
+}
+
+.side-imgs img{
+    width: 140px;
+    height: 120px;
+}
+
+.side-imgs img:hover{
+    border: 1px solid green;
+}
+.btn-size{
+    width: 30px;
+    height: 30px;
+}
+
+.btn-w{
+    padding-left: 90px !important;
+    padding-right: 90px !important;
+}
+
+.prodctgrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
